@@ -62,12 +62,13 @@ const BlogSuggestion = () => {
               />
               <span>{likes[index] ? 'Liked' : 'Like'}</span>
             </button>
-
+            <a href="/blogs">
             <button 
               className="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-colors font-programme"
             >
               See More
             </button>
+            </a>
           </div>
         </div>
       ))}

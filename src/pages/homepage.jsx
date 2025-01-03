@@ -46,7 +46,7 @@ const Homepage = () => {
       <section ref={clubsRef} className="min-h-screen py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-programme text-primary text-center mb-12">Latest Blogs</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <BlogSuggestion />
             <BlogSuggestion />
             <BlogSuggestion />
