@@ -1,63 +1,107 @@
-import { useState } from 'react';
-
 export default function OTPVerify() {
-    const [otp, setOtp] = useState(['', '', '', '', '', '']);
-
-    const handleChange = (element, index) => {
-        if (isNaN(element.value)) return false;
-
-        setOtp([...otp.map((d, idx) => (idx === index) ? element.value : d)]);
-
-        // Focus next input
-        if (element.nextSibling) {
-            element.nextSibling.focus();
-        }
-    };
-
-    const handleSubmit = () => {
-        const otpString = otp.join('');
-        // Here you would typically make an API call to verify the OTP
-        console.log('Verifying OTP:', otpString);
-    };
-
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen w-screen bg-slate-50 p-4">
-            <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-                <h2 className="text-2xl font-bold text-slate-900 text-center mb-6">Enter Verification Code</h2>
-                <p className="text-slate-500 text-center mb-8">
-                    We have sent a verification code to your email
-                </p>
-                
-                <div className="flex justify-center gap-3 mb-8">
-                    {otp.map((data, index) => {
-                        return (
-                            <input
-                                key={index}
+        <div className="flex min-h-screen w-screen">
+            <div className="flex items-center justify-center bg-gradient-to-br from-[#1B3837] to-[#2C5654]">
+                <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-lg mx-4 transform transition-all hover:scale-[1.01]">
+                    <h1 className="text-3xl font-bold text-center mb-2 text-[#1B3837]">Verify Your Email</h1>
+                    <p className="text-gray-600 text-sm text-center mb-8">Please enter the verification code sent to your email</p>
+                    
+                    <div className="space-y-6 mb-8">
+                        <div className="flex justify-center gap-2">
+                            <input 
+                                type="text" 
+                                maxLength="1"
+                                pattern="[0-9]"
+                                inputMode="numeric"
+                                autoComplete="one-time-code"
+                                className="w-14 h-14 text-center text-2xl font-bold border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3837]/20 focus:border-[#1B3837] transition-all"
+                                onKeyUp={(e) => {
+                                    if (e.target.value && e.target.nextElementSibling) {
+                                        e.target.nextElementSibling.focus();
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Backspace' && !e.target.value && e.target.previousElementSibling) {
+                                        e.target.previousElementSibling.focus();
+                                    }
+                                }}
+                            />
+                            <input 
                                 type="text"
                                 maxLength="1"
-                                value={data}
-                                onChange={e => handleChange(e.target, index)}
-                                onFocus={e => e.target.select()}
-                                className="w-14 h-14 border-2 border-slate-200 rounded-lg text-center text-xl font-semibold text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none transition-all duration-200"
+                                pattern="[0-9]"
+                                inputMode="numeric"
+                                autoComplete="one-time-code"
+                                className="w-14 h-14 text-center text-2xl font-bold border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3837]/20 focus:border-[#1B3837] transition-all"
+                                onKeyUp={(e) => {
+                                    if (e.target.value && e.target.nextElementSibling) {
+                                        e.target.nextElementSibling.focus();
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Backspace' && !e.target.value && e.target.previousElementSibling) {
+                                        e.target.previousElementSibling.focus();
+                                    }
+                                }}
                             />
-                        );
-                    })}
-                </div>
+                            <input 
+                                type="text"
+                                maxLength="1"
+                                pattern="[0-9]"
+                                inputMode="numeric"
+                                autoComplete="one-time-code"
+                                className="w-14 h-14 text-center text-2xl font-bold border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3837]/20 focus:border-[#1B3837] transition-all"
+                                onKeyUp={(e) => {
+                                    if (e.target.value && e.target.nextElementSibling) {
+                                        e.target.nextElementSibling.focus();
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Backspace' && !e.target.value && e.target.previousElementSibling) {
+                                        e.target.previousElementSibling.focus();
+                                    }
+                                }}
+                            />
+                            <input 
+                                type="text"
+                                maxLength="1"
+                                pattern="[0-9]"
+                                inputMode="numeric"
+                                autoComplete="one-time-code"
+                                className="w-14 h-14 text-center text-2xl font-bold border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B3837]/20 focus:border-[#1B3837] transition-all"
+                                onKeyUp={(e) => {
+                                    if (e.target.value && e.target.nextElementSibling) {
+                                        e.target.nextElementSibling.focus();
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Backspace' && !e.target.value && e.target.previousElementSibling) {
+                                        e.target.previousElementSibling.focus();
+                                    }
+                                }}
+                            />
+                        </div>
+                    </div>
 
-                <button
-                    onClick={handleSubmit}
-                    className="bg-[#1B3837] w-full text-white py-3 rounded-lg font-semibold hover:bg-green-600 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-200 transition-all duration-200"
-                >
-                    Next
-                </button>
-
-                <p className="text-sm text-slate-500 text-center mt-4">
-                    Didn't receive the code? {" "}
-                    <button className="text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-200 rounded transition-all duration-200">
-                        Resend
+                    <button className="w-full bg-[#1B3837] text-white font-medium py-3 rounded-lg hover:bg-[#2C5654] transform transition-all active:scale-[0.98] mb-4">
+                        Verify Code
                     </button>
-                </p>
+
+                    <div className="text-center">
+                        <p className="text-gray-600 text-sm mb-2">Didn't receive the code?</p>
+                        <button className="text-[#1B3837] text-sm font-medium hover:underline">
+                            Resend Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className="flex-1 bg-[#1B3837]">
+                <img 
+                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                    alt="OTP Verification illustration"
+                    className="w-full h-full object-cover"
+                />
             </div>
         </div>
-    );
+    )
 }

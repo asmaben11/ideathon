@@ -5,8 +5,7 @@ import BlogPage from './pages/blogpage';
 import BlogsPages from './pages/blogspage'
 import HubPage from './pages/hubPage';
 import OTP from './pages/otpverify';
-import Login from './pages/login';
-import SignUp from './pages/SignUp';
+import login from './pages';
 
 function App() {
   return (
@@ -17,10 +16,6 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/hub" element={<HubPage />} />
         <Route path="/blogs" element={<BlogsPages />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-
-        
       </Routes>
     </Router>
   );

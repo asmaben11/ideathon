@@ -33,7 +33,7 @@ const ClubSuggestions = () => {
     return [...Array(5)].map((_, index) => (
       <Star
         key={index}
-        className={`w-5 h-5 ${
+        className={`w-4 h-4 sm:w-5 sm:h-5 ${
           index < Math.floor(rating)
             ? 'fill-secondary text-secondary'
             : 'text-gray-300'
@@ -46,29 +46,32 @@ const ClubSuggestions = () => {
     <div className="w-full">
       {clubs.map((club) => (
         <div key={club.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow mb-6">
-          <div className="flex">
+          <div className="flex flex-col sm:flex-row">
             <img
               src={club.image}
               alt={`${club.name} thumbnail`}
-              className="w-48 h-48 object-cover"
+              className="w-full sm:w-48 h-48 object-cover"
             />
-            <div className="p-6 flex-1">
-              <h3 className="font-programme text-xl text-primary font-medium mb-3">{club.name}</h3>
-              <p className="text-gray-600 mb-4">{club.description}</p>
+            <div className="p-4 sm:p-6 flex-1">
+              <h3 className="font-programme text-lg sm:text-xl text-primary font-medium mb-2 sm:mb-3">{club.name}</h3>
+              <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">{club.description}</p>
               
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-500">{club.members} members</span>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 sm:mb-4 space-y-2 sm:space-y-0">
+                <span className="text-gray-500 text-sm sm:text-base">{club.members} members</span>
                 <div className="flex space-x-1">
                   {renderStars(club.rating)}
                 </div>
               </div>
 
+              <a href="/blog">
               <button 
-                className="w-full bg-secondary text-white font-programme py-2 rounded-lg hover:bg-secondary/90 transition-colors"
+                className="w-full bg-secondary text-white font-programme py-2 rounded-lg hover:bg-secondary/90 transition-colors text-sm sm:text-base"
                 onClick={() => console.log(`View details for ${club.name}`)}
               >
                 View Club Details
               </button>
+              </a>
+              
             </div>
           </div>
         </div>
