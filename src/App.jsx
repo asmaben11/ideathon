@@ -1,18 +1,17 @@
-import './App.css'
-import zelda from './assets/images/zelda.png'
-import H from './pages/homepage'
-import Loginpage from '../component/loginpage'
-import Login from '../component/login'
-import HHH from './pages/blogpage'
-import Hhh from './pages/blogspage'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from './pages/homepage';
+import BlogPage from './pages/blogspage';
 
 function App() {
-  
-    return (
-      <>
-      <HHH/>
-      </>
-    )
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
