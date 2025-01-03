@@ -12,10 +12,6 @@ function App() {
     return (
       <>
       <H/>
-        <div className="bg-blue-500 p-4 m-4 rounded-lg font-programme text-4xl"> 
-          hello ,{props.name} {props.age}
-        </div>
-        <img src={zelda} alt="zelda" className="w-64 h-64 object-cover" />
       </>
     )
   }
