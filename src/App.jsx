@@ -3,6 +3,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import zelda from './assets/images/zelda.png'
 import H from './pages/homepage'
+import Loginpage from '../component/loginpage'
+import Login from '../component/login'
 
 function App() {
   let name = "john"
@@ -10,16 +12,12 @@ function App() {
   const Greeting = props =>{
     return (
       <>
-      <H/>
-        <div className="bg-red-500 p-4 m-4 rounded-lg font-programme text-4xl"> 
-          hello ,{props.name} {props.age}
-        </div>
-        <img src={zelda} alt="zelda" className="w-64 h-64 object-cover" />
+      <Login/>
       </>
     )
   }
   return(
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center w-full max-w-none m-0 p-0">
       <Greeting name={name} age={age}/>
     </div>
   )
