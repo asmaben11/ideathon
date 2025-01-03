@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Star, Heart, MessageCircle, Share2 } from 'lucide-react';
+import { Star, Heart, MessageCircle, Share2, ArrowLeft } from 'lucide-react';
 
 export default function BlogPage() {
     const [liked, setLiked] = useState(false);
@@ -64,6 +64,15 @@ export default function BlogPage() {
 
     return (
         <div className="bg-background min-h-screen w-screen p-4 md:p-8">
+            {/* Back Button */}
+            <button 
+                onClick={() => window.history.back()}
+                className="fixed top-4 left-4 flex items-center gap-2 text-gray-600 hover:text-secondary"
+            >
+                <ArrowLeft className="w-6 h-6" />
+                <span>Back</span>
+            </button>
+
             {/* Profile Header */}
             <div className="bg-white rounded-lg shadow-md p-6 mb-8 mx-auto w-[60%]">
                 <div className="flex flex-col md:flex-row items-start gap-6">
