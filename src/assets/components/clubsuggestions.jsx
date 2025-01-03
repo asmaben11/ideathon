@@ -56,12 +56,19 @@ const ClubSuggestions = () => {
               <h3 className="font-programme text-xl text-primary font-medium mb-3">{club.name}</h3>
               <p className="text-gray-600 mb-4">{club.description}</p>
               
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-500">{club.members} members</span>
                 <div className="flex space-x-1">
                   {renderStars(club.rating)}
                 </div>
               </div>
+
+              <button 
+                className="w-full bg-secondary text-white font-programme py-2 rounded-lg hover:bg-secondary/90 transition-colors"
+                onClick={() => console.log(`View details for ${club.name}`)}
+              >
+                View Club Details
+              </button>
             </div>
           </div>
         </div>

@@ -3,12 +3,13 @@ import zelda from './assets/images/zelda.png'
 import H from './pages/homepage'
 import Loginpage from '../component/loginpage'
 import Login from '../component/login'
+import HHH from './pages/blogpage'
 
 function App() {
   
     return (
       <>
-      <H/>
+      <HHH/>
       </>
     )
 }
