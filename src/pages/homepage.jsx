@@ -15,9 +15,8 @@ const Homepage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 w-[88%] bg-primary text-white p-4 z-50">
+    <div className="min-h-screen w-screen bg-background">
+      <nav className="fixed top-0 w-screen px-[2vw] bg-primary text-white p-4 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-programme">COLINK</h1>
           <div className="space-x-6">
