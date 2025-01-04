@@ -29,14 +29,14 @@ const Homepage = () => {
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:space-x-6 mx-auto">
             <button onClick={() => scrollToSection(homeRef)} className="hover:text-secondary transition-colors">Home</button>
-            <button onClick={() => scrollToSection(clubsRef)} className="hover:text-secondary transition-colors">Clubs</button>
-            <button onClick={() => scrollToSection(blogsRef)} className="hover:text-secondary transition-colors">Blogs</button>
+            <button onClick={() => scrollToSection(clubsRef)} className="hover:text-secondary transition-colors">Blogs</button>
+            <button onClick={() => scrollToSection(blogsRef)} className="hover:text-secondary transition-colors">Clubs</button>
             <button onClick={() => scrollToSection(aboutRef)} className="hover:text-secondary transition-colors">About Us</button>
           </div>
         </div>
       </nav>
 
-
+      {/* Hero Section */}
       <section ref={homeRef} className="pt-24 sm:pt-20 min-h-screen flex items-center bg-gradient-to-br from-background to-white">
         <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="w-full md:w-1/2 space-y-8 text-center md:text-left">
@@ -56,7 +56,7 @@ const Homepage = () => {
               </button>
             </div>
           </div>
-          <div className="w-full duration-500 hover:scale-105">
+          <div className="w-full md:w-1/2 transform transition-all duration-500 hover:scale-105">
             <div className="relative">
               <div className="absolute -inset-4 bg-secondary/20 rounded-xl blur-xl"></div>
               <img 
@@ -70,7 +70,7 @@ const Homepage = () => {
         </div>
       </section>
 
-
+      {/* Clubs Section */}
       <section ref={clubsRef} className="min-h-screen py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-programme text-primary text-center mb-12">Latest Blogs</h2>
@@ -82,6 +82,7 @@ const Homepage = () => {
         </div>
       </section>
 
+      {/* Blogs Section */}
       <section ref={blogsRef} className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-programme text-primary text-center mb-12">Trending Clubs</h2>
@@ -92,7 +93,7 @@ const Homepage = () => {
         </div>
       </section>
 
-
+      {/* About Us Section */}
       <section ref={aboutRef} className="min-h-screen py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-programme text-primary text-center mb-12">About Us</h2>
